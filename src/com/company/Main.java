@@ -19,9 +19,6 @@ public class Main {
 
     }
 
-    public static boolean isCyrillic(char c) {
-        return Character.UnicodeBlock.CYRILLIC.equals(Character.UnicodeBlock.of(c));
-    }
 
     public static void singleplayer(int choice) {
         Scanner input = new Scanner(System.in);
@@ -39,20 +36,15 @@ public class Main {
             System.out.print(dash[i] + " ");
         }
 
-        for (int i = 1; i <= 10; i++) {
+        for (int i = 1; i <= 11; i++) {
             System.out.println("Try to guess a letter! ");
             char letter = input.next().charAt(0);
 
-            if (!isCyrillic(letter)) {
-                System.out.println("Please enter a bulgarian letter");
-            }
+
 
             for (int j = 0; j < CharrArr.length; j++) {
-                if (letter == dash[j]) {
-                    System.out.println("This letter already exists");
-                    System.out.println();
 
-                } else {
+
                     if (letter == CharrArr[j]) {
                         dash[j] = letter;
                         i--;
@@ -60,7 +52,7 @@ public class Main {
                         System.out.println();
                     }
                 }
-            }
+
             System.out.println(dash);
             switch (i) {
                 case 1:
@@ -161,9 +153,6 @@ public class Main {
         for (int i = 1; i <= 10; i++) {
             System.out.println("Try to guess a letter! ");
             char letter = input.next().charAt(0);
-            if (!isCyrillic(letter)) {
-                System.out.println("Please enter a bulgarian letter");
-            }
 
             for (int j = 0; j < CharrArr.length; j++) {
                 if (letter == CharrArr[j]) {
@@ -263,5 +252,3 @@ public class Main {
         }
     }
 }
-
-
